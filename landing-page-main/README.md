@@ -1,9 +1,36 @@
 # Landing Page Project
 
-## Instructions
+This is a responsive landing page project built using HTML, CSS, and JavaScript. The page dynamically generates a navigation bar based on sections, implements smooth scrolling, highlights the active section, and toggles an active state on buttons.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+## Table of Contents
 
-To get started, open `js/app.js` and start building out the app's functionality
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Setup](#setup)
+- [How It Works](#how-it-works)
+- [Customization](#customization)
+- [License](#license)
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Project Overview
+
+This project showcases a simple landing page with multiple sections. The navigation bar is dynamically generated based on the sections in the HTML. The active section is highlighted as you scroll through the page, and clicking a navigation item smoothly scrolls to the corresponding section.
+
+## Features
+
+- **Responsive Design**: Works on modern desktops, tablets, and mobile devices.
+- **Dynamically Built Navigation**: The navigation menu is built automatically based on the sections in the page.
+- **Smooth Scrolling**: Clicking a navigation item will scroll smoothly to the associated section.
+- **Active State Highlighting**: The section currently visible in the viewport is highlighted, and the corresponding navigation item is also styled as active.
+- **Button Active State**: Buttons toggle an active state when clicked, removing the active state from any previously clicked button.
+
+## Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript (ES6)
+
+## Setup
+
+To run the project locally, follow these steps:
+
