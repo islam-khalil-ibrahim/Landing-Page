@@ -26,34 +26,68 @@
 */
 
 // build the nav
-const navBarSection = ['Section 1', 'Section 2', 'Section 3'];
-const ul = document.querySelector('#navbar__list');
 
 // Build the navigation dynamically
 
-for (let i = 0; i < navBarSection.length; i++) {
-    const li = document.createElement('li');
-    const linkItem = document.createElement('a');
-    const sectionId = `section${i + 1}`; 
-    linkItem.href = `#${sectionId}`;
-    linkItem.textContent = navBarSection[i];
-    
-    // Add class to link
+function navBarSections() {
+
+    const navItems = [
+        { name: 'Section 1', link: '#section1' },
+        { name: 'Section 2', link: '#section2' },
+        { name: 'Section 3', link: '#section3' },
+        { name: 'Section 4', link: '#section4' }
+      ];
+
+
+const ul = document.querySelector('#navbar__list');
+
+    navItems.forEach(item => {
+    const li= document.createElement('li'); // Create li element
+    const linkItem = document.createElement('a');  // Create a element
+    linkItem.href = item.link;                     // Set href for link
+    linkItem.innerHTML = item.name;                // Set link text using innerHTML
     linkItem.classList.add('menu__link');
 
-    // Add click event listener for smooth scrolling
-    linkItem.addEventListener('click', function(event) {
-        event.preventDefault(); 
-        document.querySelector(linkItem.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth' // Smooth scrolling
-        });
-    });
 
-    li.appendChild(linkItem); 
-    ul.appendChild(li); 
+
+       // Add click event listener for smooth scrolling
+       linkItem.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default anchor click behavior
+        const targetSection = document.querySelector(item.link); // Get the target section
+          const sectionPosition = targetSection.offsetTop;
+        window.scrollTo({
+          top: sectionPosition,
+          behavior: 'smooth'
+        });
+      });
+
+    li.appendChild(linkItem);                // Append the link to li
+    ul.appendChild(li);                 // Append the li to ul
+  });
 }
 
-// Scroll detection function to set active section
+navBarSections();
+
+///////////////////////////////
+
+function activeSection(){
+//  const sections=document.querySelectorAll('section')
+// Loop through the buttons and add the active class to the clicked button
+const linkItem=document.querySelectorAll('.menu__link')
+    // If there's an active class, remove it
+    for (var i = 0; i < linkItem.length; i++) {
+        linkItem[i].addEventListener("click", function() {
+        var current = document.getElementsByClassName("active");
+        if (current.length > 0) { 
+          current[0].className = current[0].className.replace(" active", "");
+        }
+        this.className += " active";
+        });
+     }
+}
+activeSection();
+//////////////////////////
+
 function setActiveSection() {
     const sections = document.querySelectorAll('section');
     const navItems = document.querySelectorAll('.menu__link');
@@ -83,8 +117,7 @@ function setActiveSection() {
 }
 window.addEventListener('scroll', setActiveSection);
 
-
-
+////////////////////////
 
 ////////////Hide fixed navigation bar while not scrolling (it should still be present on page load).
 let isScrolling;

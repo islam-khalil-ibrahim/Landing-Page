@@ -77,7 +77,12 @@ section {
     display: inline-block;
     padding: 1em;
 }
-
+.navbar__menu {
+    background-color: rgb(95, 95, 95);
+    color: rgb(245, 242, 242);
+    font-weight: bold;
+    border-radius: 5px;
+  }
 .navbar__menu , .menu__link {
     display: block;
     font-weight: bold;
@@ -85,12 +90,6 @@ section {
     color: #000;
 }
 
-
-.navbar__menu li:hover {
-    background: #333;
-    color: #fff;
-    transition: ease 0.3s all;
-}
 
 /* Header Styles */
 .page__header {
@@ -112,14 +111,19 @@ section {
     color: #fff;
 }
 
-html {
-    scroll-behavior: smooth;
-  }
+.active{
+    border: 2px solid rgb(71, 219, 162); /* Example: Add a red border to active section */
+    background: #ebeaea;
+    color: #fff;
+    transition: ease 0.3s all;
 
+  }
+  
 section.active {
-    border: 2x solid rgb(29, 7, 44); /* Example: Add a red border to active section */
+    border: 2px solid rgb(71, 219, 162); /* Example: Add a red border to active section */
     background-color: rgba(120, 158, 122, 0.705); /* Example: Add a slight yellow background */
   }
+
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
 .landing__container {
