@@ -30,7 +30,3 @@ This project showcases a simple landing page with multiple sections. The navigat
 - CSS3
 - JavaScript (ES6)
 
-## Setup
-
-To run the project locally, follow these steps:
-
